@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.finsecur.com)",
+      "Bash(npm run:*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" \"https://www.finsecur.com/user/image/produit/produit_950485large.webp\" -H \"Referer: https://www.finsecur.com/\" --max-time 10)",
+      "WebFetch(domain:web.archive.org)",
+      "Bash(curl -s -o \"cap_112a.webp\" -H \"Referer: https://www.finsecur.com/\" \"https://www.finsecur.com/user/image/produit/produit_950485large.webp\")",
+      "Bash(ls -la *.webp)",
+      "WebSearch"
+    ]
+  }
+}
