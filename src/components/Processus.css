@@ -1,0 +1,55 @@
+.processus { background: var(--bg-2); }
+
+.processus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  position: relative;
+}
+
+.proc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+  transition: var(--transition);
+  animation: fade-up 0.6s calc(var(--i) * 0.1s) ease both;
+}
+.proc-card:hover {
+  border-color: color-mix(in srgb, var(--c) 40%, transparent);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  transform: translateY(-3px);
+}
+.proc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 0 0, color-mix(in srgb, var(--c) 8%, transparent), transparent 60%);
+  opacity: 0; transition: var(--transition); pointer-events: none;
+}
+.proc-card:hover::before { opacity: 1; }
+
+.proc-num {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: color-mix(in srgb, var(--c) 20%, transparent);
+  line-height: 1;
+  margin-bottom: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.proc-icon-wrap {
+  width: 52px; height: 52px;
+  border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.proc-icon-wrap svg { width: 24px; height: 24px; }
+
+.proc-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+.proc-card p  { font-size: 0.84rem; color: var(--text-muted); line-height: 1.65; }
+
+@media (max-width: 1024px) { .processus-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 600px)  { .processus-grid { grid-template-columns: 1fr; } }

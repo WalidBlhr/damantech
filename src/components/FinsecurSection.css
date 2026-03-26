@@ -1,0 +1,189 @@
+.finsecur-section { background: var(--bg-2); }
+
+.finsecur-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.finsecur-content .section-title { text-align: left; margin-bottom: 20px; }
+
+.finsecur-text {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.finsecur-text strong { color: var(--text); }
+
+.finsecur-values {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 28px 0;
+}
+.fval {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.fval-icon {
+  width: 42px; height: 42px;
+  flex-shrink: 0;
+  background: color-mix(in srgb, var(--fc) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--fc) 22%, transparent);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fval-icon svg { width: 18px; height: 18px; stroke: var(--fc); }
+.fval h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 3px; }
+.fval p { font-size: 0.83rem; color: var(--text-muted); }
+
+.finsecur-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.fcert {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.05em;
+}
+
+/* Panel visual */
+.finsecur-visual { position: relative; }
+
+.panel {
+  background: var(--bg-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.panel-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+.panel-dots { display: flex; gap: 6px; }
+.panel-dots span {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+.panel-body { padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+
+.panel-brand { text-align: center; padding: 8px 0; }
+.panel-brand-name {
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: var(--fire-light);
+}
+.panel-brand-model { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; letter-spacing: 0.1em; }
+
+.panel-alert {
+  background: rgba(231,76,60,0.1);
+  border: 1px solid rgba(231,76,60,0.3);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  animation: blink 2.5s ease-in-out infinite;
+}
+.alert-icon {
+  width: 36px; height: 36px;
+  flex-shrink: 0;
+  background: rgba(231,76,60,0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.alert-icon svg { width: 18px; height: 18px; stroke: var(--fire); }
+.alert-text { flex: 1; }
+.alert-title { font-size: 0.78rem; font-weight: 800; color: var(--fire-light); letter-spacing: 0.08em; }
+.alert-loc { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+.alert-badge {
+  font-size: 0.66rem;
+  font-weight: 800;
+  color: white;
+  background: var(--fire);
+  padding: 3px 9px;
+  border-radius: 50px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.panel-zones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.zone {
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+.zone-ok .zone-status { color: #27ae60; font-weight: 700; font-size: 0.7rem; }
+.zone-fault .zone-status { color: var(--fire); font-weight: 700; font-size: 0.7rem; }
+.zone-fault { border-color: rgba(231,76,60,0.2); }
+
+.panel-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Float badges */
+.float-badge {
+  position: absolute;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  box-shadow: var(--shadow);
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+.float-badge svg { width: 18px; height: 18px; color: var(--fire-light); flex-shrink: 0; }
+.float-badge strong { display: block; font-size: 0.82rem; line-height: 1.2; }
+.float-badge span { font-size: 0.72rem; color: var(--text-muted); display: block; }
+.badge-l { top: -16px; left: -32px; }
+.badge-r { bottom: 32px; right: -28px; }
+
+@media (max-width: 1024px) {
+  .finsecur-inner { grid-template-columns: 1fr; gap: 48px; }
+  .badge-l, .badge-r { display: none; }
+}
