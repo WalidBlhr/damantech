@@ -7,6 +7,21 @@ const kpis = [
   { value: '24h', label: 'délai de réponse' },
 ]
 
+/* Wordmark inline dans le hero — plus grand */
+const HeroWordmark = () => (
+  <svg className="hero-wordmark" viewBox="0 0 300 58" fill="none" aria-label="DamanTech">
+    <line x1="0" y1="24" x2="300" y2="24" stroke="#d94035" strokeWidth="3" strokeLinecap="round"/>
+    <text x="1" y="51"
+      fontFamily="Inter, system-ui, sans-serif"
+      fontWeight="900" fontSize="32"
+      fill="#f0e8e0" letterSpacing="-0.8">Daman</text>
+    <text x="130" y="51"
+      fontFamily="Inter, system-ui, sans-serif"
+      fontWeight="300" fontSize="32"
+      fill="#d94035" letterSpacing="2">Tech</text>
+  </svg>
+)
+
 export default function Hero() {
   return (
     <section id="home" className="hero">
@@ -21,19 +36,15 @@ export default function Hero() {
         {/* ── Colonne gauche ── */}
         <div className="hero-copy">
 
-          {/* Badge distributeur exclusif */}
-          <div className="hero-badge fade-up">
-            <span className="badge-dot" />
-            Distributeur Exclusif Agréé
+          {/* DamanTech en grand, en premier */}
+          <div className="fade-up">
+            <HeroWordmark />
           </div>
 
-          {/* Logo Finsecur mis en avant */}
-          <div className="hero-finsecur fade-up-1">
-            <img
-              src={`${import.meta.env.BASE_URL}finsecur-logo.svg`}
-              alt="Finsecur"
-              className="hero-finsecur-logo"
-            />
+          {/* Tag distributeur */}
+          <div className="hero-badge fade-up-1">
+            <span className="badge-dot" />
+            Distributeur Exclusif Agréé Finsecur
           </div>
 
           <h1 className="hero-title fade-up-2">
@@ -43,9 +54,8 @@ export default function Hero() {
           </h1>
 
           <p className="hero-subtitle fade-up-3">
-            DamanTech distribue l'intégralité de la gamme Finsecur — centrales BALTIC,
-            KARA, PACIFIC, détecteurs, déclencheurs — et assure la formation certifiée
-            de vos équipes.
+            Seul distributeur agréé Finsecur pour toute l'Afrique et le Moyen-Orient.
+            Centrales BALTIC, KARA, PACIFIC, détecteurs, déclencheurs et formation certifiée de vos équipes.
           </p>
 
           <div className="hero-actions fade-up-4">
@@ -63,8 +73,7 @@ export default function Hero() {
             {['NF SSI certifié', 'EN 54 conforme', 'ISO 9001', 'Formation agréée'].map(c => (
               <div key={c} className="cert-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
-                  <path d="M22 4L12 14.01l-3-3"/>
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
                 </svg>
                 {c}
               </div>
@@ -72,13 +81,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* ── Colonne droite — KPIs + zone ── */}
+        {/* ── Colonne droite ── */}
         <div className="hero-right fade-up-2">
 
-          {/* Card partenaire */}
+          {/* Card partenaire Finsecur */}
           <div className="hero-partner-card">
             <div className="partner-card-header">
-              <span className="partner-card-label">Partenaire officiel</span>
+              <span className="partner-card-label">Partenaire officiel exclusif</span>
             </div>
             <div className="partner-card-body">
               <img
@@ -86,11 +95,12 @@ export default function Hero() {
                 alt="Finsecur"
                 className="partner-card-logo"
               />
-              <p>Seul distributeur agréé Finsecur pour l'ensemble du continent africain et du Moyen-Orient.</p>
+              <p>Finsecur, leader français des systèmes de sécurité incendie. DamanTech assure la distribution exclusive de toute la gamme pour l'Afrique et le Moyen-Orient.</p>
             </div>
             <div className="partner-card-zone">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="14" height="14">
-                <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
               </svg>
               Afrique &amp; Moyen-Orient — Stock disponible
             </div>

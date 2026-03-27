@@ -1,17 +1,22 @@
 import { useState, useEffect } from 'react'
 import './Navbar.css'
 
-/* ── Wordmark SVG : barre du T passe au-dessus de "Daman" ── */
+/* ── Wordmark : barre du T (crossbar) s'étend sur tout "Daman" ── */
 const Wordmark = () => (
-  <svg className="logo-wordmark" viewBox="0 0 160 38" fill="none" aria-label="DamanTech">
-    {/* Barre du T — s'étend sur toute la largeur du logo */}
-    <line x1="0" y1="6" x2="160" y2="6" stroke="#d94035" strokeWidth="2.2" strokeLinecap="round"/>
-    {/* "Daman" en blanc */}
-    <text x="0" y="32" fontFamily="Inter, system-ui, sans-serif" fontWeight="800"
-          fontSize="22" fill="#e4edf8" letterSpacing="-0.5">Daman</text>
-    {/* "Tech" en rouge */}
-    <text x="90" y="32" fontFamily="Inter, system-ui, sans-serif" fontWeight="300"
-          fontSize="22" fill="#d94035" letterSpacing="1">Tech</text>
+  <svg className="logo-wordmark" viewBox="0 0 182 42" fill="none" aria-label="DamanTech">
+    {/* Barre horizontale du T — positionnée à la hauteur de la traverse (cap-height)
+        Elle s'étend de bord à bord, traversant "Daman" comme si c'était le T de Tech */}
+    <line x1="0" y1="18" x2="182" y2="18" stroke="#d94035" strokeWidth="2.4" strokeLinecap="round"/>
+    {/* "Daman" — blanc gras */}
+    <text x="1" y="37"
+      fontFamily="Inter, system-ui, sans-serif"
+      fontWeight="800" fontSize="24"
+      fill="#f0e8e0" letterSpacing="-0.5">Daman</text>
+    {/* "Tech" — rouge, tige du T aligne sur la barre */}
+    <text x="98" y="37"
+      fontFamily="Inter, system-ui, sans-serif"
+      fontWeight="300" fontSize="24"
+      fill="#d94035" letterSpacing="1.5">Tech</text>
   </svg>
 )
 
@@ -20,7 +25,7 @@ const links = [
   { label: 'Secteurs',  href: '#secteurs' },
   { label: 'Services',  href: '#services' },
   { label: 'Finsecur',  href: '#finsecur' },
-  { label: 'A propos',  href: '#about' },
+  { label: 'À propos',  href: '#about' },
 ]
 
 export default function Navbar() {
@@ -72,7 +77,7 @@ export default function Navbar() {
             </div>
             <div className="logo-text-group">
               <Wordmark />
-              <span className="logo-sub">Distribution &amp; Formation</span>
+              <span className="logo-sub">Distribution &amp; Formation — Finsecur</span>
             </div>
           </a>
 
@@ -81,17 +86,6 @@ export default function Navbar() {
             {links.map(l => (
               <a key={l.label} href={l.href} onClick={close}>{l.label}</a>
             ))}
-
-            {/* Logo Finsecur dans le nav */}
-            <div className="nav-finsecur">
-              <span>par</span>
-              <img
-                src={`${import.meta.env.BASE_URL}finsecur-logo.svg`}
-                alt="Finsecur"
-                className="nav-finsecur-logo"
-              />
-            </div>
-
             <a href="#contact" className="btn btn-fire nav-cta" onClick={close}>
               Contactez-nous
             </a>

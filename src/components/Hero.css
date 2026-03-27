@@ -65,15 +65,12 @@
   animation: pulse-dot 2.4s ease-in-out infinite;
 }
 
-/* Finsecur logo sous le badge */
-.hero-finsecur {
-  margin-bottom: 24px;
-}
-.hero-finsecur-logo {
-  height: 22px;
-  width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.75;
+/* Wordmark DamanTech hero */
+.hero-wordmark {
+  width: min(300px, 90vw);
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
 }
 
 .hero-title {
