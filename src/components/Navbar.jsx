@@ -58,7 +58,7 @@ export default function Navbar() {
               <svg viewBox="0 0 40 40" fill="none" width="36" height="36">
                 <defs>
                   <linearGradient id="lg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#1a6fc4"/><stop offset="1" stopColor="#0e4a8a"/>
+                    <stop stopColor="#e8621a"/><stop offset="1" stopColor="#7a3010"/>
                   </linearGradient>
                 </defs>
                 <rect width="40" height="40" rx="10" fill="url(#lg)"/>

@@ -2,36 +2,36 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ── Rouge : UNIQUEMENT pour les CTA et alertes ── */
+  /* ── Orange/Rouge — identité principale ── */
   --fire:        #d94035;
   --fire-dark:   #b83228;
   --fire-light:  #e85a4a;
   --ember:       #e07040;
 
-  /* ── Bleu marine — identité principale ── */
-  --navy:        #07101f;
-  --navy-2:      #0c1a30;
-  --navy-3:      #112240;
-  --blue:        #1a6fc4;
-  --blue-light:  #3a8fd4;
-  --blue-dim:    #2a5080;
+  /* ── Orange — accent principal ── */
+  --blue:        #e8621a;
+  --blue-light:  #f07840;
+  --blue-dim:    #7a3010;
 
-  /* ── Backgrounds ── */
-  --bg:          #07101f;
-  --bg-2:        #0a1628;
-  --bg-3:        #0e1e38;
-  --surface:     #132340;
-  --surface-2:   #1a2e52;
+  /* ── Backgrounds sombres chauds ── */
+  --navy:        #0f0a08;
+  --navy-2:      #150d0a;
+  --navy-3:      #1c1208;
+  --bg:          #0f0a08;
+  --bg-2:        #150d0a;
+  --bg-3:        #1c1208;
+  --surface:     #231510;
+  --surface-2:   #2e1a12;
 
   /* ── Bordures ── */
-  --border:      rgba(58,143,212,0.12);
-  --border-blue: rgba(58,143,212,0.28);
+  --border:      rgba(232,98,26,0.14);
+  --border-blue: rgba(232,98,26,0.3);
   --border-fire: rgba(217,64,53,0.3);
 
   /* ── Texte ── */
-  --text:        #e4edf8;
-  --text-muted:  #7a90b8;
-  --text-dim:    #3d5070;
+  --text:        #f0e8e0;
+  --text-muted:  #9a7860;
+  --text-dim:    #4a2e20;
 
   /* ── Utilitaires ── */
   --radius:      16px;
@@ -39,7 +39,7 @@
   --radius-lg:   24px;
   --shadow:      0 4px 24px rgba(0,0,0,0.55);
   --shadow-fire: 0 8px 32px rgba(217,64,53,0.28);
-  --shadow-blue: 0 8px 32px rgba(26,111,196,0.25);
+  --shadow-blue: 0 8px 32px rgba(232,98,26,0.25);
   --transition:  0.25s cubic-bezier(.4,0,.2,1);
 }
 
@@ -69,7 +69,7 @@ body {
 .section { padding: 96px 0; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #5ab4f0, #2d7dd2, #5ab4f0);
+  background: linear-gradient(135deg, #f07840, #e8621a, #f07840);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -84,8 +84,8 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--blue-light);
-  background: rgba(26,111,196,0.1);
-  border: 1px solid rgba(58,143,212,0.25);
+  background: rgba(232,98,26,0.08);
+  border: 1px solid rgba(232,98,26,0.22);
   padding: 5px 14px;
   border-radius: 50px;
   margin-bottom: 16px;
@@ -140,18 +140,18 @@ body {
 
 /* Bleu — secondaire / navigation */
 .btn-ghost {
-  background: rgba(26,111,196,0.08);
+  background: rgba(232,98,26,0.08);
   color: var(--text);
   border: 1px solid var(--border-blue);
 }
-.btn-ghost:hover { border-color: var(--blue-light); background: rgba(26,111,196,0.15); color: white; }
+.btn-ghost:hover { border-color: var(--blue-light); background: rgba(232,98,26,0.15); color: white; }
 
 .btn-outline {
   background: transparent;
   color: var(--blue-light);
   border: 1px solid var(--border-blue);
 }
-.btn-outline:hover { background: rgba(26,111,196,0.12); color: white; }
+.btn-outline:hover { background: rgba(232,98,26,0.12); color: white; }
 
 /* ── ANIMATIONS ─────────────────────────────────────────────────── */
 @keyframes float {

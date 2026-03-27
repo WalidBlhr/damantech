@@ -40,7 +40,7 @@ export default function Intro({ onDone }) {
           <svg viewBox="0 0 48 48" fill="none">
             <defs>
               <linearGradient id="ig2" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#1a6fc4"/><stop offset="1" stopColor="#0e4a8a"/>
+                <stop stopColor="#e8621a"/><stop offset="1" stopColor="#7a3010"/>
               </linearGradient>
             </defs>
             <rect width="48" height="48" rx="11" fill="url(#ig2)"/>

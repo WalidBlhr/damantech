@@ -7,7 +7,7 @@
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: #04080f;
+  background: #0a0604;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +22,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 40%, rgba(4,8,15,0.85) 100%);
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, transparent 40%, rgba(10,6,4,0.85) 100%);
   pointer-events: none;
   z-index: 1;
 }
@@ -49,14 +49,14 @@
 .radar-ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(26,111,196,0.18);
+  border: 1px solid rgba(232,98,26,0.18);
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
   animation: ring-pulse 3s ease-in-out infinite;
 }
 .r1 { width: 160px; height: 160px; animation-delay: 0s; }
-.r2 { width: 300px; height: 300px; animation-delay: 0.15s; border-color: rgba(26,111,196,0.12); }
-.r3 { width: 440px; height: 440px; animation-delay: 0.3s;  border-color: rgba(26,111,196,0.07); }
+.r2 { width: 300px; height: 300px; animation-delay: 0.15s; border-color: rgba(232,98,26,0.12); }
+.r3 { width: 440px; height: 440px; animation-delay: 0.3s;  border-color: rgba(232,98,26,0.07); }
 
 @keyframes ring-pulse {
   0%, 100% { opacity: 0.6; }
@@ -73,10 +73,10 @@
   transform: translate(-50%, -50%);
   background: conic-gradient(
     from -5deg,
-    rgba(26,111,196,0) 0deg,
-    rgba(58,143,212,0.5) 25deg,
-    rgba(26,111,196,0.12) 60deg,
-    rgba(26,111,196,0) 90deg
+    rgba(232,98,26,0) 0deg,
+    rgba(232,98,26,0.5) 25deg,
+    rgba(232,98,26,0.12) 60deg,
+    rgba(232,98,26,0) 90deg
   );
   animation: sweep 1.8s linear infinite;
 }
@@ -96,7 +96,7 @@
 .radar-cross::after {
   content: '';
   position: absolute;
-  background: rgba(26,111,196,0.1);
+  background: rgba(232,98,26,0.1);
 }
 .radar-cross::before { width: 100%; height: 1px; top: 50%; left: 0; }
 .radar-cross::after  { width: 1px; height: 100%; left: 50%; top: 0; }
@@ -106,8 +106,8 @@
   position: absolute;
   width: 5px; height: 5px;
   border-radius: 50%;
-  background: #3a8fd4;
-  box-shadow: 0 0 8px 2px rgba(58,143,212,0.7);
+  background: #f07840;
+  box-shadow: 0 0 8px 2px rgba(232,98,26,0.7);
   opacity: 0;
 }
 .d1 { top: 20%; left: 30%; animation: dot-blink 2s 0.5s ease-in-out infinite; }
@@ -148,7 +148,7 @@
 .intro-icon {
   width: 54px; height: 54px;
   margin-bottom: 16px;
-  filter: drop-shadow(0 0 20px rgba(26,111,196,0.6));
+  filter: drop-shadow(0 0 20px rgba(232,98,26,0.6));
 }
 .intro-icon svg { width: 100%; height: 100%; }
 
@@ -162,13 +162,13 @@
 .intro-daman {
   font-size: clamp(2rem, 8vw, 3rem);
   font-weight: 900;
-  color: #e4edf8;
+  color: #f0e8e0;
   font-family: 'Inter', system-ui, sans-serif;
 }
 .intro-tech {
   font-size: clamp(2rem, 8vw, 3rem);
   font-weight: 300;
-  color: #3a8fd4;
+  color: #f07840;
   font-family: 'Inter', system-ui, sans-serif;
   letter-spacing: 0.05em;
   margin-left: 8px;
@@ -179,7 +179,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.24em;
-  color: rgba(228,237,248,0.35);
+  color: rgba(240,232,224,0.35);
 }
 
 /* ══════════════════════════════════════════════════
@@ -202,14 +202,14 @@
 
 .partner-line {
   width: 40px; height: 1px;
-  background: rgba(58,143,212,0.35);
+  background: rgba(232,98,26,0.35);
 }
 .intro-partner > span {
   font-size: 0.62rem;
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(228,237,248,0.3);
+  color: rgba(240,232,224,0.3);
 }
 .partner-brand {
   display: flex;
@@ -218,12 +218,12 @@
   font-size: 0.88rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  color: #5ab4f0;
+  color: #f07840;
   text-transform: uppercase;
 }
 .partner-zone {
   font-size: 0.6rem;
-  color: rgba(228,237,248,0.22);
+  color: rgba(240,232,224,0.22);
   letter-spacing: 0.1em;
 }
 
@@ -235,7 +235,7 @@
   bottom: 22px;
   right: 22px;
   font-size: 0.64rem;
-  color: rgba(228,237,248,0.16);
+  color: rgba(240,232,224,0.16);
   letter-spacing: 0.07em;
   z-index: 3;
   animation: logo-in 0.5s 0.8s ease forwards;
