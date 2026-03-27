@@ -8,8 +8,6 @@ export default function Intro({ onDone }) {
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { onDone(); return }
-    if (sessionStorage.getItem('dt_intro_v2')) { onDone(); return }
-    sessionStorage.setItem('dt_intro_v2', '1')
 
     const t1 = setTimeout(() => setPhase('reveal'),  500)
     const t2 = setTimeout(() => setPhase('partner'), 1100)
