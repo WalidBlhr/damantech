@@ -100,20 +100,58 @@
 
 .form-note { font-size: 0.75rem; color: var(--text-dim); text-align: center; }
 
-.form-success {
+.form-feedback {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-top: 14px;
-  background: rgba(39,174,96,0.1);
-  border: 1px solid rgba(39,174,96,0.25);
   border-radius: var(--radius-sm);
   padding: 13px 16px;
   font-size: 0.87rem;
-  color: #27ae60;
   animation: fade-up 0.4s ease;
 }
-.form-success svg { width: 18px; height: 18px; flex-shrink: 0; }
+.form-feedback svg { width: 18px; height: 18px; flex-shrink: 0; }
+.form-success {
+  background: rgba(39,174,96,0.1);
+  border: 1px solid rgba(39,174,96,0.25);
+  color: #27ae60;
+}
+.form-error {
+  background: rgba(231,76,60,0.1);
+  border: 1px solid rgba(231,76,60,0.25);
+  color: var(--fire-light);
+}
+
+/* Reassurance */
+.contact-reassurance {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.reassurance-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.reassurance-item svg {
+  width: 14px; height: 14px;
+  stroke: var(--fire-light);
+  flex-shrink: 0;
+}
+
+/* Spinner */
+.btn-spinner {
+  width: 15px; height: 15px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 
 @media (max-width: 1024px) {
   .contact-inner { grid-template-columns: 1fr; gap: 48px; }

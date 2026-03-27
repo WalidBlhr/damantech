@@ -2,30 +2,44 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --fire:        #e74c3c;
-  --fire-dark:   #c0392b;
-  --fire-light:  #ff6b4a;
-  --ember:       #ff8c42;
-  --primary:     #e74c3c;
+  /* ── Rouge : UNIQUEMENT pour les CTA et alertes ── */
+  --fire:        #d94035;
+  --fire-dark:   #b83228;
+  --fire-light:  #e85a4a;
+  --ember:       #e07040;
 
-  --bg:          #0a0a0e;
-  --bg-2:        #101014;
-  --bg-3:        #14141a;
-  --surface:     #1a1a22;
-  --surface-2:   #222230;
+  /* ── Bleu marine — identité principale ── */
+  --navy:        #07101f;
+  --navy-2:      #0c1a30;
+  --navy-3:      #112240;
+  --blue:        #1a6fc4;
+  --blue-light:  #3a8fd4;
+  --blue-dim:    #2a5080;
 
-  --border:      rgba(255,255,255,0.07);
-  --border-fire: rgba(231,76,60,0.3);
+  /* ── Backgrounds ── */
+  --bg:          #07101f;
+  --bg-2:        #0a1628;
+  --bg-3:        #0e1e38;
+  --surface:     #132340;
+  --surface-2:   #1a2e52;
 
-  --text:        #f0f0f8;
-  --text-muted:  #8888a0;
-  --text-dim:    #55556a;
+  /* ── Bordures ── */
+  --border:      rgba(58,143,212,0.12);
+  --border-blue: rgba(58,143,212,0.28);
+  --border-fire: rgba(217,64,53,0.3);
 
+  /* ── Texte ── */
+  --text:        #e4edf8;
+  --text-muted:  #7a90b8;
+  --text-dim:    #3d5070;
+
+  /* ── Utilitaires ── */
   --radius:      16px;
   --radius-sm:   10px;
   --radius-lg:   24px;
-  --shadow:      0 4px 24px rgba(0,0,0,0.5);
-  --shadow-fire: 0 8px 32px rgba(231,76,60,0.25);
+  --shadow:      0 4px 24px rgba(0,0,0,0.55);
+  --shadow-fire: 0 8px 32px rgba(217,64,53,0.28);
+  --shadow-blue: 0 8px 32px rgba(26,111,196,0.25);
   --transition:  0.25s cubic-bezier(.4,0,.2,1);
 }
 
@@ -55,7 +69,7 @@ body {
 .section { padding: 96px 0; }
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--fire-light), var(--ember), #f1c40f);
+  background: linear-gradient(135deg, #5ab4f0, #2d7dd2, #5ab4f0);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -69,9 +83,9 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--fire-light);
-  background: rgba(231,76,60,0.1);
-  border: 1px solid rgba(231,76,60,0.22);
+  color: var(--blue-light);
+  background: rgba(26,111,196,0.1);
+  border: 1px solid rgba(58,143,212,0.25);
   padding: 5px 14px;
   border-radius: 50px;
   margin-bottom: 16px;
@@ -115,27 +129,29 @@ body {
 .btn-lg { padding: 14px 30px; font-size: 1rem; }
 .btn-sm { padding: 8px 16px; font-size: 0.82rem; }
 
+/* Rouge — CTA principal uniquement */
 .btn-fire {
   background: linear-gradient(135deg, var(--fire), var(--fire-dark));
   color: white;
   box-shadow: var(--shadow-fire);
 }
-.btn-fire:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(231,76,60,0.4); }
+.btn-fire:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(217,64,53,0.42); }
 .btn-fire:active { transform: none; }
 
+/* Bleu — secondaire / navigation */
 .btn-ghost {
-  background: transparent;
+  background: rgba(26,111,196,0.08);
   color: var(--text);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-blue);
 }
-.btn-ghost:hover { border-color: var(--border-fire); background: rgba(231,76,60,0.07); }
+.btn-ghost:hover { border-color: var(--blue-light); background: rgba(26,111,196,0.15); color: white; }
 
 .btn-outline {
   background: transparent;
-  color: var(--fire-light);
-  border: 1px solid var(--border-fire);
+  color: var(--blue-light);
+  border: 1px solid var(--border-blue);
 }
-.btn-outline:hover { background: rgba(231,76,60,0.1); }
+.btn-outline:hover { background: rgba(26,111,196,0.12); color: white; }
 
 /* ── ANIMATIONS ─────────────────────────────────────────────────── */
 @keyframes float {
@@ -161,6 +177,15 @@ body {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html { scroll-behavior: auto; }
 }
 
 .fade-up { animation: fade-up 0.7s ease both; }

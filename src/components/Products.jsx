@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import './Products.css'
 
+const BASE = import.meta.env.BASE_URL
+
 const categories = [
   { id: 'all',        label: 'Tous' },
   { id: 'centrales',  label: 'Centrales SSI' },
@@ -19,7 +21,7 @@ const products = [
     badge: 'Centrale SSI',
     badgeColor: '#e74c3c',
     desc: 'Centrales ECS, ECS/CMSI et CMSI avec l\'ensemble des peripheriques associes pour etablissements recevant du public.',
-    img: '/products/cat_centrales_a.webp',
+    img: `${BASE}products/cat_centrales_a.webp`,
     specs: ['BALTIC 512 UP & BALTIC 1024', 'KARA 8 UP Type A & B', 'Adressable & conventionnel', 'EN 54 / NF SSI Cat. A'],
   },
   {
@@ -29,7 +31,7 @@ const products = [
     badge: 'Centrale SSI',
     badgeColor: '#e74c3c',
     desc: 'Centrales CMSI et peripheriques associes pour equipements d\'alarme de type 2A — etablissements de taille moyenne.',
-    img: '/products/cat_centrales_b.webp',
+    img: `${BASE}products/cat_centrales_b.webp`,
     specs: ['PACIFIC & PACIFIC Type B', 'EGEE II habitation', 'Configuration par logiciel', 'EN 54 / NF SSI Cat. B'],
   },
   {
@@ -39,7 +41,7 @@ const products = [
     badge: 'Alarme Type 2B',
     badgeColor: '#c0392b',
     desc: 'Nouvelle gamme SONORA II alliant simplicite, conformite et efficacite — mise en oeuvre rapide, architecture simplifiee.',
-    img: '/products/cat_centrales_sonora.webp',
+    img: `${BASE}products/cat_centrales_sonora.webp`,
     specs: ['Gamme SONORA II', 'Mise en oeuvre rapide', 'Architecture simplifiee', 'Conformite NF'],
   },
 
@@ -51,7 +53,7 @@ const products = [
     badge: 'Detecteur fumee',
     badgeColor: '#e67e22',
     desc: 'Detecteur ponctuel adressable de fumee en 12V. Haute fiabilite pour systemes SSI adressables.',
-    img: '/products/cap_112a.webp',
+    img: `${BASE}products/cap_112a.webp`,
     specs: ['Adressable 12V', 'Optique ponctuel', 'EN 54-7 certifie', 'Compatible BALTIC / KARA'],
   },
   {
@@ -61,7 +63,7 @@ const products = [
     badge: 'Detecteur chaleur',
     badgeColor: '#e67e22',
     desc: 'Detecteur ponctuel conventionnel de chaleur en 24V — fiable et robuste pour environnements exigeants.',
-    img: '/products/cap_200.webp',
+    img: `${BASE}products/cap_200.webp`,
     specs: ['Conventionnel 24V', 'Thermique ponctuel', 'EN 54-5 certifie', 'Ideal industrie'],
   },
   {
@@ -71,7 +73,7 @@ const products = [
     badge: 'Detecteur combine',
     badgeColor: '#e67e22',
     desc: 'Detecteur ponctuel adressable combine fumee-chaleur en 12V — double technologie pour detection optimale.',
-    img: '/products/cap_312a.webp',
+    img: `${BASE}products/cap_312a.webp`,
     specs: ['Adressable 12V', 'Fumee + Chaleur', 'EN 54-7 & EN 54-5', 'Haute sensibilite'],
   },
   {
@@ -81,7 +83,7 @@ const products = [
     badge: 'Detecteur optique',
     badgeColor: '#e67e22',
     desc: 'Detecteur optique de fumee adressable a 7 seuils de sensibilite reglables — technologie avancee Finsecur.',
-    img: '/products/sextant_doa.webp',
+    img: `${BASE}products/sextant_doa.webp`,
     specs: ['Adressable', '7 seuils reglables', 'Optique de fumee', 'EN 54-7'],
   },
   {
@@ -91,7 +93,7 @@ const products = [
     badge: 'Detecteur lineaire',
     badgeColor: '#8e44ad',
     desc: 'Detecteur optique lineaire de fumee avec reflecteur — ideal pour grandes salles, entrepots et halls industriels.',
-    img: '/products/boreal_lr.webp',
+    img: `${BASE}products/boreal_lr.webp`,
     specs: ['Lineaire avec reflecteur', 'Grande portee', 'Halls & entrepots', 'EN 54-12'],
   },
   {
@@ -101,7 +103,7 @@ const products = [
     badge: 'Haute sensibilite',
     badgeColor: '#27ae60',
     desc: 'Detecteur de fumee par aspiration de haute sensibilite (DFHS) avec ecran LCD — pour salles informatiques et archives.',
-    img: '/products/mistral_200.webp',
+    img: `${BASE}products/mistral_200.webp`,
     specs: ['Aspiration DFHS', 'Ecran LCD', 'Tres haute sensibilite', 'Salles serveurs'],
   },
 
@@ -113,7 +115,7 @@ const products = [
     badge: 'Alarme Type 4 Radio',
     badgeColor: '#3498db',
     desc: 'Centrale radio d\'alarme type 4 — solution ultra performante alliant design, compacite et connectivite sans fil.',
-    img: '/products/echo_et4r.webp',
+    img: `${BASE}products/echo_et4r.webp`,
     specs: ['Radio sans fil', 'Alarme Type 4', 'Design compact', 'ERP & petits ERT'],
     featured: true,
   },
@@ -124,7 +126,7 @@ const products = [
     badge: 'Alarme Type 4 Secteur',
     badgeColor: '#3498db',
     desc: 'Centrale d\'alarme de type 4 avec 4 zones configurables — ideal pour commerces, bureaux et ERP de taille moyenne.',
-    img: '/products/echo_et4s_4z.webp',
+    img: `${BASE}products/echo_et4s_4z.webp`,
     specs: ['4 zones configurables', 'Alimentation secteur', 'Alarme Type 4', 'Simple a installer'],
   },
   {
@@ -134,7 +136,7 @@ const products = [
     badge: 'Diffuseur S+L Radio',
     badgeColor: '#3498db',
     desc: 'Diffuseur sonore et lumineux d\'alarme type 4 et PPMS radio — signalisation d\'evacuation complete.',
-    img: '/products/echo_edslr.webp',
+    img: `${BASE}products/echo_edslr.webp`,
     specs: ['Sonore + Lumineux', 'Radio adressable', 'PPMS compatible', 'Tres haute visibilite'],
   },
   {
@@ -144,7 +146,7 @@ const products = [
     badge: 'Declencheur Radio T4',
     badgeColor: '#3498db',
     desc: 'Declencheur manuel d\'alarme type 4 radio — transmission instantanee de l\'alarme sans cablage.',
-    img: '/products/echo_edmr.webp',
+    img: `${BASE}products/echo_edmr.webp`,
     specs: ['Manuel radio', 'Alarme Type 4', 'Sans cablage', 'Transmission instantanee'],
   },
 
@@ -156,7 +158,7 @@ const products = [
     badge: 'Declencheur adressable',
     badgeColor: '#c0392b',
     desc: 'Declencheur manuel adressable (DM) — haute fiabilite assurant transmission instantanee de l\'alarme. Certifie EN 54-11.',
-    img: '/products/sextant_dma.webp',
+    img: `${BASE}products/sextant_dma.webp`,
     specs: ['Adressable', 'EN 54-11 certifie', 'Transmission instantanee', 'Compatible BALTIC / KARA'],
   },
   {
@@ -166,7 +168,7 @@ const products = [
     badge: 'Declencheur conventionnel',
     badgeColor: '#c0392b',
     desc: 'Declencheur manuel conventionnel — solution fiable et economique pour systemes d\'alarme incendie conventionnels.',
-    img: '/products/sextant_dmc.webp',
+    img: `${BASE}products/sextant_dmc.webp`,
     specs: ['Conventionnel', 'EN 54-11', 'Rouge standard', 'Toutes installations'],
   },
   {
@@ -176,7 +178,7 @@ const products = [
     badge: 'Commande desenfumage',
     badgeColor: '#7f8c8d',
     desc: 'Boitier de commande manuelle conventionnel con&#231;u pour le desenfumage — declenchement manuel des volets et exutoires.',
-    img: '/products/sextant_bcm.webp',
+    img: `${BASE}products/sextant_bcm.webp`,
     specs: ['Desenfumage', 'Commande manuelle', 'Conventionnel', 'EN 12101 compatible'],
   },
 
@@ -188,7 +190,7 @@ const products = [
     badge: 'DAAF Autonome',
     badgeColor: '#f39c12',
     desc: 'Detecteur Avertisseur Autonome de Fumee (DAAF) pour habitations. Technologie optique professionnelle. Norme NF EN 14604.',
-    img: '/products/calypso_ii.webp',
+    img: `${BASE}products/calypso_ii.webp`,
     specs: ['DAAF autonome', 'Optique professionnel', 'NF EN 14604', 'Logements & coproprietes'],
   },
   {
@@ -198,7 +200,7 @@ const products = [
     badge: 'DAAF Radio',
     badgeColor: '#f39c12',
     desc: 'Detecteur Avertisseur Autonome de Fumee avec liaison radio — interconnexion sans fil entre detecteurs du logement.',
-    img: '/products/calypso_ii_r.webp',
+    img: `${BASE}products/calypso_ii_r.webp`,
     specs: ['Liaison radio integree', 'Interconnexion sans fil', 'Optique professionnel', 'NF EN 14604'],
     featured: true,
   },
@@ -209,7 +211,7 @@ const products = [
     badge: 'Desenfumage habitat',
     badgeColor: '#27ae60',
     desc: 'Systeme de desenfumage 20 niveaux pour immeuble d\'habitation (3eme famille B) — gestion complete de l\'evacuation des fumees.',
-    img: '/products/egee_lcd.webp',
+    img: `${BASE}products/egee_lcd.webp`,
     specs: ['20 niveaux', 'Immeuble 3eme famille B', 'Adressable', 'Desenfumage complet'],
   },
 ]

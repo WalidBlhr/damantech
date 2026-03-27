@@ -1,127 +1,84 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import './Intro.css'
 
 export default function Intro({ onDone }) {
-  // phases: 'flame' → 'text-in' → 'extinguish' → 'done'
-  const [phase, setPhase] = useState('flame')
+  const [phase, setPhase] = useState('radar')  // radar → reveal → partner → out
+
+  const skip = useCallback(() => onDone(), [onDone])
 
   useEffect(() => {
-    // 1. Flamme s'allume (0 → 1.2s)
-    // 2. Texte "DAMAN TECH" entre (1.2s)
-    // 3. Flamme s'éteint (2.4s)
-    // 4. Tout disparaît (3.4s) → onDone
-    const t1 = setTimeout(() => setPhase('text-in'),    1200)
-    const t2 = setTimeout(() => setPhase('extinguish'), 2400)
-    const t3 = setTimeout(() => setPhase('done'),       3800)
-    const t4 = setTimeout(() => onDone(),               4200)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { onDone(); return }
+    if (sessionStorage.getItem('dt_intro_v2')) { onDone(); return }
+    sessionStorage.setItem('dt_intro_v2', '1')
+
+    const t1 = setTimeout(() => setPhase('reveal'),  500)
+    const t2 = setTimeout(() => setPhase('partner'), 1100)
+    const t3 = setTimeout(() => setPhase('out'),     1900)
+    const t4 = setTimeout(() => onDone(),            2500)
     return () => [t1, t2, t3, t4].forEach(clearTimeout)
   }, [onDone])
 
-  if (phase === 'done') return null
-
   return (
-    <div className={`intro intro--${phase}`}>
-      {/* Particules de braise */}
-      <div className="sparks">
-        {Array.from({ length: 18 }).map((_, i) => (
-          <div key={i} className="spark" style={{ '--i': i }} />
-        ))}
+    <div className={`intro intro--${phase}`} onClick={skip} aria-hidden="true">
+
+      {/* ── Radar ────────────────────────────── */}
+      <div className="radar-wrap">
+        <div className="radar-ring r1" />
+        <div className="radar-ring r2" />
+        <div className="radar-ring r3" />
+        <div className="radar-sweep" />
+        {/* Points de détection qui s'allument */}
+        <div className="radar-dot d1" />
+        <div className="radar-dot d2" />
+        <div className="radar-dot d3" />
+        <div className="radar-dot d4" />
+        <div className="radar-dot d5" />
+        <div className="radar-cross" />
       </div>
 
-      {/* Flamme SVG animée */}
-      <div className="flame-wrap">
-        <svg className="flame-svg" viewBox="0 0 120 180" fill="none">
-          <defs>
-            <linearGradient id="fo" x1="60" y1="170" x2="60" y2="4" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#c0392b"/>
-              <stop offset="0.4" stopColor="#e74c3c"/>
-              <stop offset="0.7" stopColor="#ff8c42"/>
-              <stop offset="1" stopColor="#f1c40f"/>
-            </linearGradient>
-            <linearGradient id="fi" x1="60" y1="155" x2="60" y2="34" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#e74c3c"/>
-              <stop offset="0.5" stopColor="#ff8c42"/>
-              <stop offset="1" stopColor="#fff176"/>
-            </linearGradient>
-          </defs>
-          {/* Flamme extérieure */}
-          <path className="flame-outer" d="
-            M60 170
-            C30 160 10 140 8 115
-            C5 90 20 70 25 55
-            C28 42 22 28 20 18
-            C35 30 38 45 42 38
-            C46 30 44 12 50 4
-            C54 18 56 35 60 40
-            C64 35 66 18 70 4
-            C76 12 74 30 78 38
-            C82 45 85 30 100 18
-            C98 28 92 42 95 55
-            C100 70 115 90 112 115
-            C110 140 90 160 60 170Z
-          "/>
-          {/* Flamme intérieure */}
-          <path className="flame-inner" d="
-            M60 155
-            C42 148 30 132 30 112
-            C30 94 42 78 46 64
-            C49 54 47 42 50 34
-            C54 44 56 58 60 62
-            C64 58 66 44 70 34
-            C73 42 71 54 74 64
-            C78 78 90 94 90 112
-            C90 132 78 148 60 155Z
-          "/>
-          {/* Coeur */}
-          <path className="flame-core" d="
-            M60 140
-            C50 134 44 122 46 108
-            C48 96 56 86 60 80
-            C64 86 72 96 74 108
-            C76 122 70 134 60 140Z
-          "/>
-          {/* Etincelle centrale */}
-          <circle className="flame-spark" cx="60" cy="95" r="6"/>
-        </svg>
-
-        {/* Effet de chaleur / halo */}
-        <div className="flame-halo" />
-      </div>
-
-      {/* Texte DAMAN TECH */}
-      <div className="intro-text">
-        <div className="intro-logo-icon">
+      {/* ── Logo ─────────────────────────────── */}
+      <div className="intro-logo">
+        <div className="intro-icon">
           <svg viewBox="0 0 48 48" fill="none">
-            <rect width="48" height="48" rx="12" fill="url(#ilg)"/>
-            <path d="M24 7L34 13L34 25C34 31.5 29.5 37 24 39C18.5 37 14 31.5 14 25L14 13Z"
-                  fill="white" opacity="0.15" stroke="white" strokeWidth="1.2"/>
-            <path d="M24 17C24 17 27.5 21 27.5 24.5C27.5 26.5 26 28 24 28.2C22 28 20.5 26.5 20.5 24.5C20.5 21 24 17 24 17Z"
-                  fill="white" opacity="0.95"/>
-            <path d="M24 24.5C24 24.5 26 26.5 26 28.5C26 30 25.1 31 24 31.2C22.9 31 22 30 22 28.5C22 26.5 24 24.5 24 24.5Z"
-                  fill="#ff8c42"/>
             <defs>
-              <linearGradient id="ilg" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#c0392b"/><stop offset="1" stopColor="#e74c3c"/>
+              <linearGradient id="ig2" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#1a6fc4"/><stop offset="1" stopColor="#0e4a8a"/>
               </linearGradient>
             </defs>
+            <rect width="48" height="48" rx="11" fill="url(#ig2)"/>
+            <path d="M24 8L33 13V24C33 29.5 29 34 24 36C19 34 15 29.5 15 24V13Z"
+                  fill="white" opacity="0.15" stroke="white" strokeWidth="1"/>
+            <path d="M24 18C24 18 27 21.5 27 24.5C27 26.4 25.7 27.8 24 28C22.3 27.8 21 26.4 21 24.5C21 21.5 24 18 24 18Z"
+                  fill="white" opacity="0.95"/>
+            <path d="M24 24.5C24 24.5 25.8 26.3 25.8 28C25.8 29.2 25 30 24 30.2C23 30 22.2 29.2 22.2 28C22.2 26.3 24 24.5 24 24.5Z"
+                  fill="#d94035"/>
           </svg>
         </div>
-        <div className="intro-name">
+
+        <div className="intro-wordmark">
           <span className="intro-daman">DAMAN</span>
           <span className="intro-tech">TECH</span>
         </div>
-        <div className="intro-tagline">Supervision Securite Incendie</div>
+
+        <div className="intro-tagline">Supervision Sécurité Incendie</div>
       </div>
 
-      {/* Smoke (phase extinguish) */}
-      <div className="smoke-wrap">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} className="smoke-puff" style={{ '--si': i }} />
-        ))}
+      {/* ── Badge Finsecur ───────────────────── */}
+      <div className="intro-partner">
+        <div className="partner-line" />
+        <span>Distributeur Exclusif</span>
+        <div className="partner-brand">
+          <svg viewBox="0 0 16 16" fill="none" width="10" height="10">
+            <circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="1.5"/>
+            <path d="M5 8l2.5 2.5L11 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
+          FINSECUR
+        </div>
+        <div className="partner-zone">Afrique &amp; Moyen-Orient</div>
+        <div className="partner-line" />
       </div>
 
-      {/* Overlay fade-out */}
-      <div className="intro-overlay" />
+      <div className="intro-skip">Cliquer pour passer</div>
     </div>
   )
 }
