@@ -60,7 +60,7 @@ export default function Intro({ onDone }) {
           <span className="intro-tech">TECH</span>
         </div>
 
-        <div className="intro-tagline">Supervision Sécurité Incendie</div>
+        <div className="intro-tagline">Distribution &amp; Formation Incendie</div>
       </div>
 
       {/* ── Badge Finsecur ───────────────────── */}

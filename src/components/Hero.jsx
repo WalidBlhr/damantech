@@ -27,15 +27,15 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-title fade-up-1">
-            Protégez vos<br />
-            établissements avec<br />
-            <span className="gradient-text">l'expertise Finsecur</span>
+            Equipez-vous avec<br />
+            les solutions Finsecur<br />
+            <span className="gradient-text">livrées en Afrique</span>
           </h1>
 
           <p className="hero-subtitle fade-up-2">
-            DamanTech est le partenaire technique de référence pour les systèmes SSI
-            en Afrique et au Moyen-Orient. Centrales BALTIC, KARA, PACIFIC —
-            de la conception à la mise en service.
+            DamanTech est le distributeur exclusif agréé Finsecur pour l'Afrique
+            et le Moyen-Orient. Centrales BALTIC, KARA, PACIFIC, détecteurs,
+            déclencheurs et formation certifiée — disponibles et livrés rapidement.
           </p>
 
           <div className="hero-actions fade-up-3">
@@ -69,7 +69,7 @@ export default function Hero() {
               <span className="panel-dot panel-dot--amber" />
               <span className="panel-dot panel-dot--dim" />
             </div>
-            <span className="panel-label">DamanTech — Supervision SSI</span>
+            <span className="panel-label">DamanTech — Distribution Finsecur</span>
           </div>
 
           <div className="hero-panel-body">
@@ -105,7 +105,7 @@ export default function Hero() {
 
             <div className="panel-status">
               <span className="panel-dot panel-dot--green pulse-dot-anim" />
-              <span>Système nominal — Zones 1–8 surveillées</span>
+              <span>Stock disponible — Livraison Afrique &amp; Moyen-Orient</span>
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './Navbar.css'
 
 const Logo = () => (
@@ -23,7 +23,7 @@ const Logo = () => (
       <span className="logo-name">
         <span className="logo-daman">Daman</span><span className="logo-tech">Tech</span>
       </span>
-      <span className="logo-sub">Supervision Securite</span>
+      <span className="logo-sub">Distribution &amp; Formation</span>
     </div>
   </a>
 )
@@ -37,8 +37,9 @@ const links = [
 ]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled]   = useState(false)
+  const [open, setOpen]           = useState(false)
+  const menuRef                   = useRef(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -46,40 +47,47 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Verrouille le scroll quand le menu est ouvert
+  // Verrouille le scroll body quand menu ouvert
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
     return () => { document.body.style.overflow = '' }
   }, [open])
 
   const close = () => setOpen(false)
+  const toggle = () => setOpen(o => !o)
 
   return (
-    <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
-      <div className="container nav-inner">
-        <Logo />
+    <>
+      {/* Backdrop — hors du header pour éviter les conflits de z-index */}
+      <div
+        className={`nav-backdrop${open ? ' nav-backdrop--visible' : ''}`}
+        onClick={close}
+        aria-hidden="true"
+      />
 
-        {/* Overlay cliquable pour fermer */}
-        {open && <div className="nav-backdrop" onClick={close} aria-hidden="true" />}
+      <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
+        <div className="container nav-inner">
+          <Logo />
 
-        <nav className={`nav-links${open ? ' open' : ''}`} aria-label="Navigation principale">
-          {links.map(l => (
-            <a key={l.label} href={l.href} onClick={close}>{l.label}</a>
-          ))}
-          <a href="#contact" className="btn btn-fire nav-cta" onClick={close}>
-            Contactez-nous
-          </a>
-        </nav>
+          <nav ref={menuRef} className={`nav-links${open ? ' open' : ''}`} aria-label="Navigation">
+            {links.map(l => (
+              <a key={l.label} href={l.href} onClick={close}>{l.label}</a>
+            ))}
+            <a href="#contact" className="btn btn-fire nav-cta" onClick={close}>
+              Contactez-nous
+            </a>
+          </nav>
 
-        <button
-          className={`hamburger${open ? ' active' : ''}`}
-          onClick={() => setOpen(o => !o)}
-          aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
-          aria-expanded={open}
-        >
-          <span/><span/><span/>
-        </button>
-      </div>
-    </header>
+          <button
+            className={`hamburger${open ? ' active' : ''}`}
+            onClick={toggle}
+            aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+            aria-expanded={open}
+          >
+            <span/><span/><span/>
+          </button>
+        </div>
+      </header>
+    </>
   )
 }
