@@ -4,8 +4,6 @@
   z-index: 1000;
   padding: 14px 0;
   transition: padding 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-  /* isolation empêche backdrop-filter de créer un stacking context global */
-  isolation: isolate;
 }
 
 /* Le fond flouté est sur un pseudo-élément — ne crée PAS de stacking context
@@ -137,13 +135,14 @@
 .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* ── Backdrop ──────────────────────────────────── */
+/* z-index 999 = sous le navbar (1000), couvre uniquement le contenu de la page */
 .nav-backdrop {
   display: none;
   position: fixed;
   inset: 0;
   background: rgba(4,8,15,0.65);
   backdrop-filter: blur(2px);
-  z-index: 1001;
+  z-index: 999;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
