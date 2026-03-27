@@ -3,16 +3,33 @@
   top: 0; left: 0; right: 0;
   z-index: 1000;
   padding: 14px 0;
-  transition: all 0.3s ease;
+  transition: padding 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  /* isolation empêche backdrop-filter de créer un stacking context global */
+  isolation: isolate;
 }
-.navbar.scrolled {
+
+/* Le fond flouté est sur un pseudo-élément — ne crée PAS de stacking context
+   sur le header, donc le drawer mobile (position:fixed) fonctionne correctement */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: -1;
+}
+.navbar.scrolled::before {
   background: rgba(7,16,31,0.94);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(58,143,212,0.12);
-  padding: 10px 0;
   box-shadow: 0 4px 32px rgba(0,0,0,0.4);
 }
+.navbar.scrolled { padding: 10px 0; }
 
 .nav-inner {
   display: flex;
@@ -126,7 +143,7 @@
   inset: 0;
   background: rgba(4,8,15,0.65);
   backdrop-filter: blur(2px);
-  z-index: 1000;
+  z-index: 1001;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
