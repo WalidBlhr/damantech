@@ -7,8 +7,8 @@ const values = [
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
       </svg>
     ),
-    title: 'Exclusivite garantie',
-    desc: 'Seul distributeur Finsecur agree pour l\'Afrique et le Moyen-Orient.',
+    title: 'Exclusivité garantie',
+    desc: 'Seul distributeur Finsecur agréé pour l\'Afrique et le Moyen-Orient depuis 2009.',
   },
   {
     icon: (
@@ -17,8 +17,8 @@ const values = [
         <path d="M22 4L12 14.01l-3-3"/>
       </svg>
     ),
-    title: 'Produits 100% authentiques',
-    desc: 'Garantie fabricant Finsecur sur l\'ensemble des produits fournis.',
+    title: 'Produits 100 % authentiques',
+    desc: 'Garantie fabricant Finsecur sur l\'ensemble des produits fournis — électronique, optoélectronique, radio-fréquences.',
   },
   {
     icon: (
@@ -27,8 +27,8 @@ const values = [
         <path d="M6 12v5c3 3 9 3 12 0v-5"/>
       </svg>
     ),
-    title: 'Expertise certifiee',
-    desc: 'Formations agreees Finsecur pour les professionnels de la securite incendie.',
+    title: 'Expertise certifiée',
+    desc: 'Formations agréées Finsecur : définition des SSI, paramétrage KARA, BALTIC, PACIFIC.',
   },
 ]
 
@@ -82,14 +82,17 @@ export default function About() {
             DamanTech,<br />votre partenaire<br />securite incendie
           </h2>
           <p className="about-text">
-            DamanTech est une societe specialisee dans la <strong>distribution et la supervision
-            des systemes de securite incendie</strong>, basee en France (Crosne, Essonne). Nous sommes
-            le <strong>distributeur exclusif agree Finsecur</strong> pour l'ensemble de l'Afrique
-            et du Moyen-Orient.
+            Depuis sa création en 2009, DamanTech met à la disposition de ses clients son savoir-faire
+            dans les domaines de la sûreté et de la sécurité : <strong>contrôle d'accès, vidéo
+            surveillance, détection incendie, extinction automatique, détection d'intrusion et gestion
+            du temps.</strong>
           </p>
           <p className="about-text">
-            Nous proposons une offre complete : fourniture des equipements Finsecur, conseil technique,
-            gestion de projets SSI et formations certifiees pour les installateurs et exploitants.
+            En tant que <strong>distributeur exclusif agréé Finsecur</strong> pour l'Afrique et le
+            Moyen-Orient, DamanTech offre conseil et accompagnement dans la maîtrise des systèmes de
+            haute technologie — électronique, optoélectronique, radio-fréquences. Notre offre couvre
+            l'analyse des besoins, les études d'ingénierie, l'intégration logicielle-matérielle et
+            la formation sur les systèmes.
           </p>
 
           <div className="about-values">

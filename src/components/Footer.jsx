@@ -1,21 +1,25 @@
 import './Footer.css'
 
 const productLinks = [
-  { label: 'Centrales SSI (BALTIC / KARA / PACIFIC)', href: '#centrales' },
-  { label: 'Detecteurs (CAP / CORAIL)', href: '#detecteurs' },
-  { label: 'Supervision ScanServer', href: '#supervision' },
-  { label: 'Extinction automatique', href: '#extinction' },
-  { label: 'Diffuseurs CALYPSO / SEXTANT', href: '#accessoires' },
-  { label: 'DAAF autonomes', href: '#daaf' },
+  { label: 'Centrales SSI Cat. A (BALTIC / KARA)', href: '#produits' },
+  { label: 'Centrales SSI Cat. B (PACIFIC / SONORA)', href: '#produits' },
+  { label: 'Détecteurs (CAP / SEXTANT / BOREAL / MISTRAL)', href: '#produits' },
+  { label: 'Gamme ECHO — Alarme Type 4', href: '#produits' },
+  { label: 'Extinction automatique (KARA EXCT / CORAIL)', href: '#produits' },
+  { label: 'Supervision ScanServer', href: '#produits' },
+  { label: 'Accessoires (AVISO / FI-REP / Alimentations)', href: '#produits' },
+  { label: 'DAAF autonomes (CALYPSO-II / CALYPSO-II-R)', href: '#produits' },
 ]
 
 const serviceLinks = [
-  { label: 'Gestion de projets SSI', href: '#projets' },
-  { label: 'Formation — Definition SSI', href: '#formations' },
-  { label: 'Formation — Zones de securite', href: '#formations' },
-  { label: 'Formation — Parametrage KARA 8 UP', href: '#formations' },
-  { label: 'Formation — Parametrage BALTIC', href: '#formations' },
-  { label: 'Formation — Parametrage PACIFIC', href: '#formations' },
+  { label: 'Analyse & spécifications techniques', href: '#services' },
+  { label: 'Gestion de projets SSI', href: '#services' },
+  { label: 'Formation — Définition des SSI', href: '#services' },
+  { label: 'Formation — Zones de sécurité', href: '#services' },
+  { label: 'Formation — Paramétrage KARA 8 UP', href: '#services' },
+  { label: 'Formation — Paramétrage BALTIC', href: '#services' },
+  { label: 'Formation — Paramétrage PACIFIC', href: '#services' },
+  { label: 'Formation — Supervision ScanServer', href: '#services' },
 ]
 
 export default function Footer() {

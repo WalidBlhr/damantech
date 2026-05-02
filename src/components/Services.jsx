@@ -1,11 +1,12 @@
 import './Services.css'
 
 const formations = [
-  'Definition des systemes SSI',
-  'Definition des zones de securite',
-  'Parametrage ECS-CMSI KARA 8 UP',
-  'Parametrage ECS-CMSI BALTIC 512 / 1024',
-  'Parametrage CMSI PACIFIC',
+  'Définition des Systèmes de Sécurité Incendie (SSI)',
+  'Définition des zones de sécurité',
+  'Paramétrage de l\'ECS-CMSI KARA 8 UP',
+  'Paramétrage de l\'ECS-CMSI BALTIC 512 / 1024',
+  'Paramétrage du CMSI PACIFIC',
+  'Supervision ScanServer — prise en main & administration',
 ]
 
 export default function Services() {
@@ -21,6 +22,43 @@ export default function Services() {
         </div>
 
         <div className="services-grid">
+          {/* Analyse & Ingénierie */}
+          <div className="service-card">
+            <div className="service-icon-wrap" style={{ '--sc': '#27ae60' }}>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </div>
+            <div className="service-content">
+              <span className="service-tag">Ingénierie</span>
+              <h3>Analyse &amp; Spécifications Techniques</h3>
+              <p>
+                DamanTech réalise l'analyse complète de vos besoins et définit les spécifications
+                techniques et fonctionnelles adaptées à votre projet SSI — du petit ERP aux
+                installations industrielles complexes.
+              </p>
+              <ul className="service-list">
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 8l3 3 7-6"/></svg>
+                  Analyse des contraintes réglementaires
+                </li>
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 8l3 3 7-6"/></svg>
+                  Spécifications techniques et fonctionnelles
+                </li>
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 8l3 3 7-6"/></svg>
+                  Étude d'ingénierie et plans d'implantation
+                </li>
+                <li>
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 8l3 3 7-6"/></svg>
+                  Qualification et intégration logicielle-matérielle
+                </li>
+              </ul>
+              <a href="#contact" className="btn btn-outline">Soumettre un besoin</a>
+            </div>
+          </div>
+
           {/* Projets */}
           <div className="service-card">
             <div className="service-icon-wrap" style={{ '--sc': '#e74c3c' }}>

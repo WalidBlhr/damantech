@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(https://web.archive.org/web/20190315211723im_/http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(https://web.archive.org/web/20190315211723im_/http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype');
+}
+
+/*
+     FILE ARCHIVED ON 21:17:23 Mar 15, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 20:53:20 Dec 14, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.876
+  exclusion.robots: 0.024
+  exclusion.robots.policy: 0.01
+  esindex: 0.012
+  cdx.remote: 44.352
+  LoadShardBlock: 320.83 (6)
+  PetaboxLoader3.datanode: 275.84 (7)
+  load_resource: 376.227
+  PetaboxLoader3.resolve: 349.448
+*/

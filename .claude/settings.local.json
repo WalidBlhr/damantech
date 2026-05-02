@@ -17,7 +17,10 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git rm:*)",
-      "Bash(curl -s -o /Users/walid/Desktop/testdt/public/finsecur-logo.svg \"https://www.finsecur.com/data/image/SVG/logo-finsecur.svg\")"
+      "Bash(curl -s -o /Users/walid/Desktop/testdt/public/finsecur-logo.svg \"https://www.finsecur.com/data/image/SVG/logo-finsecur.svg\")",
+      "Bash(open /Users/walid/Documents/testdt/site/index.html)",
+      "Bash(git -C /Users/walid/Documents/testdt log --oneline -8)",
+      "Bash(npm --prefix /Users/walid/Documents/testdt run dev)"
     ]
   }
 }

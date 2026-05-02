@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Partagez votre projet de sécurité incendie avec DamanTech. Devis, études, ingénierie — nous vous accompagnons."/>
+  <title>Projets — DamanTech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>Distributeur exclusif Finsecur — Afrique &amp; Moyen-Orient depuis 2009</span>
+    <div class="topbar-right">
+      <a href="tel:+33169243921">&#128222; +33 (0)1 69 24 39 21</a>
+      <a href="mailto:contact@damantech.com">&#9993; contact@damantech.com</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-badge">DT</div>
+        <div class="logo-text">
+          <strong>DamanTech</strong>
+          <span>"Supervision Sécurité"</span>
+        </div>
+      </a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="products.html">Produits</a></li>
+          <li class="active">
+            <a href="projets.html">Services &#9660;</a>
+            <div class="dropdown"><div class="dropdown-section"><a href="projets.html">Projets</a><a href="formations.html">Formations</a></div></div>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Une idée, un projet ?</h1>
+    <p>Partagez-le avec nous — notre équipe vous accompagne de la conception à la mise en œuvre</p>
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span>&rsaquo;</span>
+      <a href="#">Services</a>
+      <span>&rsaquo;</span>
+      <span>Projets</span>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 2fr;gap:50px">
+      <div>
+        <h2 style="font-size:1.6rem;font-weight:700;margin-bottom:20px">Partagez votre <span style="color:#cc2200">Projet</span></h2>
+        <p style="color:#555;margin-bottom:20px;line-height:1.7">Vous avez un projet de sécurité incendie ? Que ce soit pour une nouvelle installation, une mise à niveau ou une extension de système existant, DamanTech vous accompagne à chaque étape.</p>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">&#128222;</div>
+          <div>
+            <strong>Téléphone</strong>
+            <p><a href="tel:+33169243921">+33 (0) 1 69 24 39 21</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#9993;</div>
+          <div>
+            <strong>Email Projets</strong>
+            <p><a href="mailto:contact@damantech.com">contact@damantech.com</a></p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">&#128205;</div>
+          <div>
+            <strong>Adresse</strong>
+            <p>13-15, rue des Entrepreneurs<br/>91560 Crosne (France)</p>
+          </div>
+        </div>
+
+        <div style="background:#fff8f7;border:1.5px solid #cc2200;border-radius:8px;padding:20px;margin-top:24px">
+          <strong style="color:#cc2200;display:block;margin-bottom:8px">Délai de réponse</strong>
+          <p style="font-size:.88rem;color:#555">Nous vous répondrons dans les <strong>48 heures ouvrées</strong> suivant la réception de votre demande.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:24px">Décrivez votre <span style="color:#cc2200">projet</span></h2>
+        <form id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="objet">Objet / Type de projet</label>
+              <input type="text" id="objet" name="objet" class="form-control" placeholder="Ex: Nouvelle installation ECS/CMSI" required/>
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom Complet</label>
+              <input type="text" id="nom" name="nom" class="form-control" placeholder="Votre nom complet" required/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Adresse Email</label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="votre@email.com" required/>
+            </div>
+            <div class="form-group">
+              <label for="phone">N° Téléphone</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+33 X XX XX XX XX"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="fichier">Cahier des charges / Plan (optionnel)</label>
+            <input type="file" id="fichier" name="fichier" class="form-control" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.png"/>
+          </div>
+          <div class="form-group">
+            <label for="message">Description du projet</label>
+            <textarea id="message" name="message" class="form-control" placeholder="Décrivez votre projet : type d'établissement, superficie, systèmes existants, besoins spécifiques..." required style="min-height:180px"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-rouge" style="padding:14px 36px;font-size:1rem">Envoyer ma demande &#9658;</button>
+          </div>
+          <div id="form-message" style="display:none"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Notre <span>Démarche Projet</span></h2>
+      <div class="separator"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center">
+      <div style="padding:24px 16px">
+        <div style="width:56px;height:56px;background:#cc2200;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:800;margin:0 auto 16px">1</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px">Analyse des besoins</h3>
+        <p style="font-size:.87rem;color:#666">Étude de vos contraintes techniques et réglementaires, visite de site si nécessaire.</p>
+      </div>
+      <div style="padding:24px 16px">
+        <div style="width:56px;height:56px;background:#cc2200;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:800;margin:0 auto 16px">2</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px">Proposition technique</h3>
+        <p style="font-size:.87rem;color:#666">Étude d'ingénierie, choix des équipements, devis détaillé et planning de réalisation.</p>
+      </div>
+      <div style="padding:24px 16px">
+        <div style="width:56px;height:56px;background:#cc2200;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:800;margin:0 auto 16px">3</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px">Livraison &amp; Installation</h3>
+        <p style="font-size:.87rem;color:#666">Fourniture des équipements, paramétrage et mise en service par nos techniciens certifiés.</p>
+      </div>
+      <div style="padding:24px 16px">
+        <div style="width:56px;height:56px;background:#cc2200;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:800;margin:0 auto 16px">4</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px">Formation &amp; Suivi</h3>
+        <p style="font-size:.87rem;color:#666">Formation des équipes sur les systèmes installés et support technique post-installation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <div class="logo-badge" style="width:44px;height:44px;font-size:1.2rem">DT</div>
+          <div><strong style="color:#fff;font-size:1.1rem">DamanTech</strong><br/><small style="color:#cc2200;font-style:italic">"Supervision Sécurité"</small></div>
+        </div>
+        <p>Distributeur exclusif des équipements Finsecur en Afrique et Moyen-Orient.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Produits</h4>
+        <ul>
+          <li><a href="products.html#control-panel">Centrales ECS/CMSI</a></li>
+          <li><a href="products.html#detecteurs">Détecteurs</a></li>
+          <li><a href="products.html#extinction">Extinction Auto.</a></li>
+          <li><a href="products.html#scanserver">Supervision</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Société</h4>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="formations.html">Formations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+33169243921">+33 (0)1 69 24 39 21</a></li>
+          <li><a href="mailto:contact@damantech.com">contact@damantech.com</a></li>
+          <li style="color:#888;font-size:.85rem;margin-top:8px">13-15, rue des Entrepreneurs<br/>91560 Crosne, France</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright &copy; 2016–2025 DamanTech. Tous droits réservés.</span>
+      <a href="terms.html">Termes et conditions</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

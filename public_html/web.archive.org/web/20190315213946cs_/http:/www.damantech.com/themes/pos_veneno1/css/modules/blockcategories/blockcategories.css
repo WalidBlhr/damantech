@@ -1,0 +1,110 @@
+#categories_block_top {
+  clear: both;
+  position: relative;
+  top: 30px; }
+  #categories_block_top .sf-menu {
+    position: relative; }
+    #categories_block_top .sf-menu > li {
+      position: static; }
+      #categories_block_top .sf-menu > li > ul {
+        width: 100%;
+        top: 60px;
+        margin: 0 20px; }
+        #categories_block_top .sf-menu > li > ul > li {
+          display: block;
+          float: left;
+          width: 20%;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          padding: 0 10px; }
+        #categories_block_top .sf-menu > li > ul > .category_thumb {
+          display: block;
+          clear: both;
+          overflow: hidden;
+          width: 100%; }
+          #categories_block_top .sf-menu > li > ul > .category_thumb img {
+            display: inline-block;
+            width: 33%; }
+      #categories_block_top .sf-menu > li h4 a {
+        font-size: 1.1em; }
+        #categories_block_top .sf-menu > li h4 a:before {
+          display: none; }
+      #categories_block_top .sf-menu > li .main-level-submenus {
+        position: relative;
+        display: block !important;
+        visibility: visible !important;
+        top: 0;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        left: 0; }
+    #categories_block_top .sf-menu .category_thumb {
+      display: none; }
+
+#categories_block_left li {
+  position: relative; }
+  #categories_block_left li a {
+    text-decoration: none;
+font-size: 14px;
+line-height: 30px;
+font-weight: normal;
+text-transform: uppercase;
+color: #666;
+padding: 0;
+display: block;
+cursor: pointer;
+background: url('https://web.archive.org/web/20220308071548im_/https://www.damantech.com/themes/pos_veneno1/css/modules/blockcategories/img/bg-vetical.png') repeat-x center;
+}
+
+#categories_block_left li a span{
+  background: #fff;
+  display: inline-block;
+  padding: 3px 10px 3px 3px;
+}
+
+  #categories_block_left li span.grower {
+    color: #777;
+    display: block;
+    height: 15px;
+    padding: 0;
+    width: 15px;
+    border: 0;   
+    background: #e9e9e9;
+    padding: 12px;
+    position: absolute;
+    right: -2px;
+    top: 7px;
+    cursor: pointer;
+  }
+    #categories_block_left li span.grower.CLOSE{
+      background: #fff url(https://web.archive.org/web/20220308071548im_/https://www.damantech.com/themes/pos_veneno1/css/modules/blockcategories/img/menu_down.png) no-repeat 50% 50%;
+    }
+    #categories_block_left li span.grower.OPEN{
+     background:#fff url(https://web.archive.org/web/20220308071548im_/https://www.damantech.com/themes/pos_veneno1/css/modules/blockcategories/img/menu_up.png) no-repeat 50% 50%; 
+    }
+
+  #categories_block_left li li a {
+    font-weight: normal;
+    color: #777; }
+.sub_tree{padding-left: 15px;}
+/*
+     FILE ARCHIVED ON 07:15:48 Mar 08, 2022 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 20:53:09 Dec 14, 2025.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  captures_list: 0.512
+  exclusion.robots: 0.018
+  exclusion.robots.policy: 0.008
+  esindex: 0.01
+  cdx.remote: 23.013
+  LoadShardBlock: 210.435 (3)
+  PetaboxLoader3.resolve: 273.86 (4)
+  PetaboxLoader3.datanode: 131.879 (4)
+  load_resource: 226.338
+*/
